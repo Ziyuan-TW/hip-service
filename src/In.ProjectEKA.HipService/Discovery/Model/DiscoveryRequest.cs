@@ -29,3 +29,5 @@ namespace In.ProjectEKA.HipService.Discovery.Model
         }
     }
 }
+
+//Add code to test coverage change
