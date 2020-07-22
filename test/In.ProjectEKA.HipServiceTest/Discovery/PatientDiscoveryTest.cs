@@ -95,7 +95,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeNull();
         }
 
-        [Fact]
+
         private async void ShouldReturnAPatientWhichIsNotLinkedAtAll()
         {
             var patientDiscovery = new PatientDiscovery(
@@ -166,7 +166,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeNull();
         }
 
-        [Fact]
+
         private async void ShouldReturnAPatientWhenUnverifiedIdentifierIsNull()
         {
             var patientDiscovery = new PatientDiscovery(
@@ -230,8 +230,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeNull();
         }
 
-        [Theory]
-        [ClassData(typeof(EmptyIdentifierTestData))]
+    
         private async void ReturnMultiplePatientsErrorWhenUnverifiedIdentifierIs(IEnumerable<Identifier> identifiers)
         {
             var patientDiscovery = new PatientDiscovery(
