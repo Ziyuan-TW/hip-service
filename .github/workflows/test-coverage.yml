@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - code-coverage-zi
 jobs:
   build:
     runs-on: ubuntu-latest
