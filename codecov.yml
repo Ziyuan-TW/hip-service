@@ -11,6 +11,7 @@ coverage:
         branches:
           - master
           - code-coverage-zi
+          - test-hook
     comment:
       layout: "reach, diff, flags, files"
       behavior: default
@@ -20,4 +21,6 @@ coverage:
       branches:               # branch names that can post comment
         - master
         - code-coverage-zi
-    
+        - test-hook
+    github_enterprise:
+      webhook_secret: test

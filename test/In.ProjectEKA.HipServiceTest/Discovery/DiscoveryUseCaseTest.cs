@@ -9,7 +9,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
 
     public class DiscoveryUseCaseTest
     {
-        [Fact]
+       
         private void ShouldReturnNoPatientFoundError()
         {
             var (patient, error) =
@@ -20,7 +20,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeEquivalentTo(expectedError);
         }
 
-        [Fact]
+     
         private void ShouldReturnMultiplePatientsFoundError()
         {
             var patient1 = new PatientEnquiryRepresentation("123", "Jack", new List<CareContextRepresentation>(), new List<string>
@@ -40,7 +40,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeEquivalentTo(expectedError);
         }
 
-        [Fact]
+       
         private void ShouldReturnAPatient()
         {
             var patient1 = new PatientEnquiryRepresentation("123", "Jack", new List<CareContextRepresentation>(), new List<string>
