@@ -5,8 +5,13 @@ coverage:
         target: auto
         threshold: 0.01%
         base: auto
-        only_pulls: false
         paths: "src/"
+        branches:
+          - master
+          - code-coverage-zi
+        if_ci_failed: error
+        informational: false
+        only_pulls: false
     comment:
       layout: "reach, diff, flags, files"
       behavior: default

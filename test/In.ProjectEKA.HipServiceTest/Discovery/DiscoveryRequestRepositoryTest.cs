@@ -18,7 +18,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             return new DiscoveryContext(optionsBuilder);
         }
 
-        [Fact]
+       
         private async void ShouldAddAndDeleteDiscoveryRequest()
         {
             var dbContext = GetDiscoveryRequestContext();
