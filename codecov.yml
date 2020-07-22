@@ -8,6 +8,9 @@ coverage:
         base: auto
         only_pulls: false
         paths: "src/"
+        branches:
+          - master
+          - code-coverage-zi
     comment:
       layout: "reach, diff, flags, files"
       behavior: default
@@ -16,5 +19,5 @@ coverage:
       require_head: no       # [yes :: must have a head report to post]
       branches:               # branch names that can post comment
         - master
-        
+        - code-coverage-zi
     
