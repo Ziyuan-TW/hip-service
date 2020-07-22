@@ -21,5 +21,14 @@ jobs:
         run: echo ::set-env name=RELEASE_VERSION::$(echo $GITHUB_SHA | head -c7)
       - name: Test coverage
         run: dotnet test test/In.ProjectEKA.HipServiceTest/In.ProjectEKA.HipServiceTest.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover 
-      - name: Publish to CodeCov
-        run: bash <(curl -s https://codecov.io/bash)  
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          files: ./coverage1.xml,./coverage2.xml
+          directory: ./coverage/reports/
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          path_to_write_report: ./coverage/codecov_report.gz
