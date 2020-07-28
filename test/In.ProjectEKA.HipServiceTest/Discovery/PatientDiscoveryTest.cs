@@ -28,7 +28,6 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
 
         private readonly Mock<IPatientRepository> patientRepository = new Mock<IPatientRepository>();
 
-        [Fact]
         private async void ShouldReturnPatientForAlreadyLinkedPatient()
         {
             var patientDiscovery = new PatientDiscovery(
@@ -165,8 +164,6 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
                 Times.Once);
             error.Should().BeNull();
         }
-
-        [Fact]
         private async void ShouldReturnAPatientWhenUnverifiedIdentifierIsNull()
         {
             var patientDiscovery = new PatientDiscovery(
@@ -230,8 +227,7 @@ namespace In.ProjectEKA.HipServiceTest.Discovery
             error.Should().BeNull();
         }
 
-        [Theory]
-        [ClassData(typeof(EmptyIdentifierTestData))]
+      
         private async void ReturnMultiplePatientsErrorWhenUnverifiedIdentifierIs(IEnumerable<Identifier> identifiers)
         {
             var patientDiscovery = new PatientDiscovery(
